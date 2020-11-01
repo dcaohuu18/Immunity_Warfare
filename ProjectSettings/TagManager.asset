@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Cell
+  - Edge
+  - RightEdge
+  - TopEdge
+  - BotEdge
+  - LeftEdge
   layers:
   - Default
   - TransparentFX
