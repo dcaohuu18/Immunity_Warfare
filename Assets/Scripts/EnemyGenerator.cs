@@ -21,8 +21,17 @@ public class EnemyGenerator : MonoBehaviour
     {
         if (GameManager.playGame && GameManager.enemyToBeGen > 0 && Random.Range(0f, GameManager.enemyFreq) < 1)
         {
-            bacteriaClone = Instantiate(bacteria, new Vector3(transform.position.x, Random.Range(-4.6f, 4.5f), 0f), 
-                                        transform.rotation) as GameObject;
+            if (Random.Range(0f, 2*GameManager.enemyFreq) < 1) //the corona virus appears once in a while
+            // For WebGL: 3*GameManager.enemyFreq
+            {
+                coronavirusClone = Instantiate(coronavirus, new Vector3(transform.position.x, Random.Range(-4.5f, 4.4f), 0f), 
+                                               transform.rotation) as GameObject;
+            }
+            else
+            {
+                bacteriaClone = Instantiate(bacteria, new Vector3(transform.position.x, Random.Range(-4.5f, 4.4f), 0f), 
+                                            transform.rotation) as GameObject;
+            }
             GameManager.enemyToBeGen--;
         }
     }

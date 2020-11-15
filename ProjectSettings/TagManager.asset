@@ -20,8 +20,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - neutroTrap
+  - enemy
   - 
   - 
   - 
@@ -45,6 +45,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: B_Cell
+    uniqueID: 3728984487
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Neutrophile
+    uniqueID: 1305077187
     locked: 0

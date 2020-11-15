@@ -13,7 +13,7 @@ public class Macrophage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    	dir = new Vector3(-1, 0, 0); // move left at first
+        dir = new Vector3(-1, 0, 0); // move left at first
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class Macrophage : MonoBehaviour
 
 	IEnumerator OnMouseDown() // highlight when chosen !!
     {
-    	GameManager.chosenObject = gameObject;
+        GameManager.chosenObject = gameObject;
         GameManager.chosenObjectSize = GetComponent<Renderer>().bounds.size;
         // to avoid calling SetTargetPosition() the first time the cell is selected:
         justSelected = true;
@@ -40,14 +40,14 @@ public class Macrophage : MonoBehaviour
 
     void SetTargetPosition()
     {
-    	targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    	targetPosition.z  = transform.position.z;
-    	dir = (targetPosition - transform.position).normalized; // dir facing the targetPosition
+        targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        targetPosition.z  = transform.position.z;
+        dir = (targetPosition - transform.position).normalized; // dir facing the targetPosition
     }
 
     void Move()
     {
-    	transform.position +=  dir * speed * Time.deltaTime;
+        transform.position +=  dir * speed * Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -55,7 +55,6 @@ public class Macrophage : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
-            GameManager.enemyLeftNum--;
         }
 
         if (collision.gameObject.tag.Contains("Edge") || collision.gameObject.tag == "Cell")

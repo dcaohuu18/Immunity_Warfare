@@ -34,7 +34,22 @@ public class Bacteria : MonoBehaviour
         {
             Destroy(gameObject); // Destroy self
             GameManager.enemyEscapeNum++;
-            GameManager.enemyLeftNum--;
         }
+        // To avoid it going off the top and bottom edges:
+        else if (collision.gameObject.tag == "TopEdge")
+        {
+            transform.Translate(new Vector3(GameManager.bacteria_X_speed*Time.deltaTime, -Y_SpeedRange*Time.deltaTime, 0));
+            // Go down
+        }
+        else if (collision.gameObject.tag == "BotEdge")
+        {
+            transform.Translate(new Vector3(GameManager.bacteria_X_speed*Time.deltaTime, Y_SpeedRange*Time.deltaTime, 0));
+            // Go up
+        }
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.enemyLeftNum--;
     }
 }
