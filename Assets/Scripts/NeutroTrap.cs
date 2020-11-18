@@ -6,12 +6,14 @@ public class NeutroTrap : MonoBehaviour
 {
     public float speed = 1f;
     public float switchDirTimer = 0f;
-    public float timeToSwitch = 1f; 
+    public float timeToSwitch = 1f;
+
+    private AudioManager audioManager; 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -39,6 +41,7 @@ public class NeutroTrap : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy") 
         {
+            audioManager.Play("Swallow");
             Destroy(collision.gameObject, 0.14f);
         }
     }   

@@ -22,7 +22,7 @@ TagManager:
   - 
   - neutroTrap
   - enemy
-  - 
+  - b_cell
   - 
   - 
   - 
@@ -53,4 +53,7 @@ TagManager:
     locked: 0
   - name: Neutrophile
     uniqueID: 1305077187
+    locked: 0
+  - name: UI_Canvas
+    uniqueID: 3036676587
     locked: 0

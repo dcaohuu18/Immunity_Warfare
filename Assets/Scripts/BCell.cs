@@ -18,10 +18,13 @@ public class BCell : MonoBehaviour
 
     private bool mouseOnObject = false; //
 
+    private AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        dir = new Vector3(0, 0, 0); // stand still at first
+        audioManager = FindObjectOfType<AudioManager>();
+        dir = new Vector3(-1, 0, 0); // move left/forward at first
     }
 
     // Update is called once per frame
@@ -86,6 +89,7 @@ public class BCell : MonoBehaviour
     {
     	if (fireTimer >= timeToFire)
         {
+            audioManager.Play("Laser");
             //North:
             antibodyClone = Instantiate(antibody, new Vector3(transform.position.x, transform.position.y+1f, 0),
                                     	Quaternion.Euler(0, 0, 0)) as GameObject;

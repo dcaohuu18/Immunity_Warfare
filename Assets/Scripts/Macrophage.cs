@@ -10,9 +10,12 @@ public class Macrophage : MonoBehaviour
     private Vector3 dir;
     private bool justSelected = false;
 
+    private AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         dir = new Vector3(-1, 0, 0); // move left at first
     }
 
@@ -43,6 +46,10 @@ public class Macrophage : MonoBehaviour
         targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         targetPosition.z  = transform.position.z;
         dir = (targetPosition - transform.position).normalized; // dir facing the targetPosition
+
+        // to prevent the macrophage from standing still:
+        if (dir == new Vector3(0, 0, 0)) 
+            dir = new Vector3(-1, 0, 0); 
     }
 
     void Move()
@@ -54,6 +61,7 @@ public class Macrophage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            audioManager.Play("Swallow");
             Destroy(collision.gameObject);
         }
 

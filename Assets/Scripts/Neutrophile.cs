@@ -10,10 +10,13 @@ public class Neutrophile : MonoBehaviour
     public Vector3 dir;
 
     private bool justSelected = false;
+
+    private AudioManager audioManager;
     
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         dir = new Vector3(-1, 0, 0); // move left at first
     }
 
@@ -45,6 +48,10 @@ public class Neutrophile : MonoBehaviour
         targetPosition.z  = transform.position.z;
         dir = (targetPosition - transform.position).normalized; // dir facing the targetPosition
 
+        // to prevent the neutrophil from standing still:
+        if (dir == new Vector3(0, 0, 0)) 
+            dir = new Vector3(-1, 0, 0); 
+
         //Rotate:
         transform.right = transform.position - targetPosition;
     }
@@ -58,6 +65,7 @@ public class Neutrophile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy") 
         {
+            audioManager.Play("Swallow");
             Destroy(collision.gameObject);
         }
 
