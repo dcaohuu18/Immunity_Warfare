@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 111, y: -97}
+  m_AnchoredPosition: {x: 111, y: -95}
   m_SizeDelta: {x: 59.11361, y: 23.274216}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &311566739
@@ -722,7 +722,7 @@ PrefabInstance:
     - target: {fileID: 429056536834786474, guid: 61005a4d93b4e444fa3280141b666818,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.08
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 429056536834786474, guid: 61005a4d93b4e444fa3280141b666818,
         type: 3}
@@ -1326,7 +1326,7 @@ PrefabInstance:
     - target: {fileID: 8428322204320447068, guid: cbcb9e0a81010d340985be8e40077a8b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.29
+      value: -5.2
       objectReference: {fileID: 0}
     - target: {fileID: 8428322204320447068, guid: cbcb9e0a81010d340985be8e40077a8b,
         type: 3}
@@ -1542,7 +1542,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126188687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.08, y: 0, z: -19.140625}
+  m_LocalPosition: {x: -14, y: 0, z: -19.140625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1584,7 +1584,7 @@ PrefabInstance:
     - target: {fileID: 429056536834786474, guid: 61005a4d93b4e444fa3280141b666818,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.08
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 429056536834786474, guid: 61005a4d93b4e444fa3280141b666818,
         type: 3}
@@ -1866,7 +1866,7 @@ PrefabInstance:
     - target: {fileID: 8428322204320447068, guid: cbcb9e0a81010d340985be8e40077a8b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.29
+      value: 5.2
       objectReference: {fileID: 0}
     - target: {fileID: 8428322204320447068, guid: cbcb9e0a81010d340985be8e40077a8b,
         type: 3}

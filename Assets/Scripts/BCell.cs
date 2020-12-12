@@ -5,6 +5,8 @@ using UnityEngine;
 public class BCell : MonoBehaviour
 {
     public float speed = 0.2f;
+    private float enterSceneTimer = 0f;
+    private Rigidbody2D rbComp;
 
     public GameObject antibody;
     private GameObject antibodyClone;
@@ -25,6 +27,8 @@ public class BCell : MonoBehaviour
     {
         audioManager = FindObjectOfType<AudioManager>();
         dir = new Vector3(-1, 0, 0); // move left/forward at first
+        rbComp = GetComponent<Rigidbody2D>();
+        rbComp.isKinematic = true; // "disable" the rigidbody at first so it can cross the right edge
     }
 
     // Update is called once per frame
@@ -32,8 +36,14 @@ public class BCell : MonoBehaviour
     {
         if (GameManager.playGame)
         {
-            if (Input.GetMouseButton(0) && gameObject == GameManager.chosenObject && justSelected == false)
-                SetTargetPosition();
+            enterSceneTimer += Time.deltaTime;
+
+            if (enterSceneTimer >= 20f)
+            {
+            	rbComp.isKinematic = false; // "activate" the rigidbody
+            	if (Input.GetMouseButton(0) && gameObject==GameManager.chosenObject && justSelected==false)
+                	SetTargetPosition();                
+            }
 
             Move();
 
@@ -76,7 +86,7 @@ public class BCell : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag.Contains("Edge") || collision.gameObject.tag == "Cell")
+        if ((collision.gameObject.tag.Contains("Edge") || collision.gameObject.tag == "Cell") && enterSceneTimer >= 20f)
         {
             // Bounce back:
             targetPosition.x = collision.GetContact(0).point.x + Random.Range(-1f, 1f);

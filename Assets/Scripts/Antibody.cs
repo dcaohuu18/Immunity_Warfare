@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Antibody : MonoBehaviour
 {
-    public float timeToDie = 4;
+    public float timeToDie = 3.5f;
     private float dieTimer;
     // Start is called before the first frame update
     void Start()
@@ -26,10 +26,6 @@ public class Antibody : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject); // Destroy self
-        }
-        if (collision.gameObject.tag.Contains("Edge"))
-        {
             Destroy(gameObject); // Destroy self
         }
     }

@@ -56,6 +56,17 @@ public class Corona : MonoBehaviour
             GameManager.coronaEscape = true;
             GameManager.enemyEscapeNum++;
         }
+        // To avoid it jumping off the top and bottom edges:
+        else if (collision.gameObject.tag == "TopEdge")
+        {
+            transform.Translate(new Vector3(X_Speed*Time.deltaTime, -jumpAmount*Time.deltaTime, 0));
+            // jump DOWN
+        }
+        else if (collision.gameObject.tag == "BotEdge")
+        {
+            transform.Translate(new Vector3(X_Speed*Time.deltaTime, jumpAmount*Time.deltaTime, 0));
+            // jump UP
+        }
     }
 
     private void OnDestroy()

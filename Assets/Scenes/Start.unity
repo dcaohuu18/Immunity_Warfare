@@ -1359,7 +1359,7 @@ PrefabInstance:
     - target: {fileID: 429056536834786474, guid: 61005a4d93b4e444fa3280141b666818,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.08
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 429056536834786474, guid: 61005a4d93b4e444fa3280141b666818,
         type: 3}
@@ -1797,8 +1797,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.2493, y: 85.89998}
-  m_SizeDelta: {x: 412.615, y: 112.80786}
+  m_AnchoredPosition: {x: 2.3, y: 26.4}
+  m_SizeDelta: {x: 421.73016, y: 231.76465}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &811762152
 MonoBehaviour:
@@ -1819,11 +1819,21 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The animations of the bacteria and the coronavirus are from Icons8.com.
+  m_text: 'The animations of the bacteria and the coronavirus are from https://icons8.com.
 
 
     The
-    main theme music is by Instrumental Background Music: https://tinyurl.com/yx8u8an9 '
+    animation of the antibody is made by Flat Icons: https://www.flaticon.com/authors/flat-icons
+    from www.flaticon.com.
+
+
+    The animations of the cells and the cursor in the
+    instruction are made by Freepik: https://www.flaticon.com/authors/freepik from
+    www.flaticon.com.
+
+
+    The main theme music is made by Instrumental Background
+    Music: https://tinyurl.com/yx8u8an9 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3281,7 +3291,7 @@ PrefabInstance:
     - target: {fileID: 8428322204320447068, guid: cbcb9e0a81010d340985be8e40077a8b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.29
+      value: -5.2
       objectReference: {fileID: 0}
     - target: {fileID: 8428322204320447068, guid: cbcb9e0a81010d340985be8e40077a8b,
         type: 3}
@@ -4056,7 +4066,7 @@ PrefabInstance:
     - target: {fileID: 429056536834786474, guid: 61005a4d93b4e444fa3280141b666818,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.08
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 429056536834786474, guid: 61005a4d93b4e444fa3280141b666818,
         type: 3}
@@ -4209,7 +4219,7 @@ PrefabInstance:
     - target: {fileID: 8428322204320447068, guid: cbcb9e0a81010d340985be8e40077a8b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.29
+      value: 5.2
       objectReference: {fileID: 0}
     - target: {fileID: 8428322204320447068, guid: cbcb9e0a81010d340985be8e40077a8b,
         type: 3}
